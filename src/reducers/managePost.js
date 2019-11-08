@@ -3,9 +3,6 @@ export default function managePost(
     state = {
         posts: [],
         user: {},
-        username: null,
-        user_id: null,
-        userpic: null,
         error: false,
         page: 'feed-page',
         comment: ''
