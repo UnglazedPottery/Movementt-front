@@ -37,7 +37,7 @@ function EditProfilePage() {
     //     errorMessage = "Post failed to create"
     // }
     return (
-        <div className="edit-profile">
+        <div className="lavender">
             <p><strong>Edit {props.user.username}'s profile</strong></p>
             <form onSubmit={(e) => handleImage(e)} onChange={handleChange}>
                 {/* <div className="error">{errorMessage}</div><br /><br /> */}
@@ -45,9 +45,9 @@ function EditProfilePage() {
                 <input type="file" id="avatar" name="avatar"/><br />
                 {/* <input type="hidden" name="user_id" value={props.user_id}/> */}
                 {/* <input type="hidden" name="username" value={props.username}/> */}
-                <label for="description">Write Description:</label>
+                <label for="description">Write Bio:</label>
                 <input name="description" id="description" value={props.description}/><br />
-                <input type="submit" value="submit"/>
+                <input className="btn btn-primary btn-sm m-1" type="submit" value="submit"/>
             </form>
 
         </div>

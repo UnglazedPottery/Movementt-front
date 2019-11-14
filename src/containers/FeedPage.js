@@ -10,19 +10,23 @@ function FeedPage() {
 
     const props = useSelector(state => state)
     let createPost, userHeader
-    
+
     if (props.user) {
         createPost = <CreatePost />
         userHeader = <UserHeader />
-      }
+    }
 
     return (
-        <div className="Ap">
+        <div className="container-fluid">
             {createPost}
-            <PostIndex />
-            <div className="inline-right" >
-                {userHeader}
-                <SearchBox />
+            <div class="row">
+                <div class="col-sm-8" >
+                    <PostIndex />
+                </div>
+                <div class="col-sm-4 " >
+                    {userHeader}
+                    <SearchBox />
+                </div>
             </div>
         </div>
     );

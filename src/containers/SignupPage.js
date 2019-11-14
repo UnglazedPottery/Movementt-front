@@ -31,7 +31,7 @@ function SignupPage() {
     }
 
         return (
-            <form onSubmit={(e) => handleSignup(e)}>
+            <form className="whitefont font-weight-bold" onSubmit={(e) => handleSignup(e)}>
                 username:<input name="username" /><br /><br />
                 password:<input name="password" type="password" />
                 <input type="submit" value="Create Account" />

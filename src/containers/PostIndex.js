@@ -8,7 +8,7 @@ function PostIndex() {
     const props = useSelector(state => state)
 
     return (
-        <div className="index">
+        <div className="m-2">
             {props.posts.map(post => {
                 return <PostCard post={post} key={post.id}/>
             })}

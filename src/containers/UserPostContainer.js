@@ -7,17 +7,10 @@ function UserPostContainer() {
     const props = useSelector(state => state)
 
     return (
-        <div className="border">
+        <div className="border lavender rounded">
             {props.user.posts.map(post => {
                 return <UserPost post={post} key={post.id} />
             })}
-            <UserPost />
-            <UserPost />
-            <UserPost />
-            <UserPost />
-            <UserPost />
-            <UserPost />
-            <UserPost />
         </div>
     )
 

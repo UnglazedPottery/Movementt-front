@@ -18,18 +18,29 @@ function App() {
       .then(resp => resp.json())
       .then(currentuser => {
         console.log("currentuser: ", currentuser)
-        dispatch({ type: 'SET_USER', user: currentuser })
+        if (!currentuser.error) {
+          dispatch({ type: 'SET_USER', user: currentuser })
+        }
       })
     //fetch all the posts to populate feed
     fetch(`http://localhost:3000/posts`, { credentials: 'include' })
       .then(resp => resp.json())
       .then(posts => {
-        dispatch({ type: 'GET_POSTS', payload: posts})
+        console.log("posts",posts)
+        dispatch({ type: 'GET_POSTS', payload: posts })
       })
 
   }
 
-  useEffect(myEffect,[])
+  useEffect(myEffect, [])
+
+  function handleLogout() {
+    fetch('http://localhost:3000/logout', { credentials: 'include' })
+    .then(resp => resp.json())
+    .then(currentuser => {
+      dispatch({ type: 'LOGOUT'})
+    })
+  }
 
   let CurrentPage;
   //console.log("current-props:", props)
@@ -49,18 +60,18 @@ function App() {
     CurrentPage = <EditProfilePage />
   }
   return (
-    <div >
-      <div className="center">Movementt</div>
-      <div className="right">
+    <div className="container">
+      <div className="text-center "><h1>Movementt</h1></div>
+      <div className="right font-weight-bold">
         {props.user ?
           <div>
-            <p>Logged in as {props.user.username}</p>
-            <button onClick={() => dispatch({ type: 'LOGOUT' })}>Logout</button>
+            <div className="whitefont">Logged in as {props.user.username}</div>
+            <button class="btn btn-primary btn-sm" onClick={handleLogout}>Logout</button><br /><br />
           </div>
           :
           <div>
-            <button onClick={() => dispatch({ type: 'SWITCH_PAGE', page: "login" })}>Login</button>
-            <button onClick={() => dispatch({ type: 'SWITCH_PAGE', page: "signup" })}>Create Account</button>
+            <button class="btn btn-primary btn-sm mr-2" onClick={() => dispatch({ type: 'SWITCH_PAGE', page: "login" })}>Login</button>
+            <button class="btn btn-primary btn-sm" onClick={() => dispatch({ type: 'SWITCH_PAGE', page: "signup" })}>Create Account</button><br /><br />
           </div>
         }
       </div>

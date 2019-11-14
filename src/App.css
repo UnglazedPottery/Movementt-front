@@ -1,3 +1,8 @@
+body  {
+  background-image: url("stars.gif");
+  background-color: rgb(240,240,240);
+}
+
 .App {
   text-align: center;
 }
@@ -69,7 +74,7 @@
 
 ul {
   list-style-type: none;
-  margin: 0px 300px 0px 300px;
+  margin: 20px 200px 0px 200px;
   padding: 0;
   overflow: hidden;
   background-color: #333;
@@ -98,10 +103,10 @@ li a:hover:not(.active) {
 span.b {
   display: inline-block;
   width: 30%;
-  height: 150px;
+  height: 200px;
   padding: 5px;
   border: 1px solid blue;    
-  background-color: rgb(164, 162, 238); 
+  background-color: rgb(60, 60, 60); 
   margin: 10px 5px 10px 5px;
 }
 
@@ -114,4 +119,21 @@ span.b {
 .search {
   width: 200px;
   height: 20px;
+}
+
+.lavender {
+  background-color: #f9f9f9;
+}
+
+.whitefont {
+  color: white;
+}
+
+h1 {
+	font-size: calc(2.7em + 2.5vw);
+	font-weight: 600;
+	letter-spacing: .01em;
+	padding: 1rem 0 0 4.5rem;
+  text-shadow: .022em .022em .022em #111;
+  color: white
 }

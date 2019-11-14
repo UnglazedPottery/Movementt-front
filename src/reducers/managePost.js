@@ -2,7 +2,7 @@
 export default function managePost(
     state = {
         posts: [],
-        user: {},
+        user: null,
         error: false,
         page: 'feed-page',
         comment: ''
@@ -15,7 +15,7 @@ export default function managePost(
 
         case 'GET_POSTS':
 
-            return { ...state, posts: state.posts.concat(action.payload) };
+            return { ...state, posts: action.payload };
 
         case 'SET_USER':
 

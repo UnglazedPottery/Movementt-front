@@ -6,8 +6,12 @@ const UserHeader = () => {
     const dispatch = useDispatch()
 
     return(
-        <div className="border2" onClick={()=> dispatch({ type: 'SWITCH_PAGE', page: 'profile' })}>
-            <img className="user-pic" src={props.user.file_url} alt="user pic" height="42" width="42"/><strong>  {props.user.username}</strong>
+        <div className="p-2 m-2 bg-light rounded lavender" onClick={()=> dispatch({ type: 'SWITCH_PAGE', page: 'profile' })}>
+            <h4>
+                <img className="rounded-circle" src={props.user.file_url} alt="user pic" height="80" width="80"/>
+                <span className="pl-3">{props.user.username}</span>
+            </h4>
+            {/* <br/> if page is profile then display bio */}
         </div>
     )
 }

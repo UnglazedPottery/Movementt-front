@@ -41,17 +41,17 @@ function CreatePost() {
         errorMessage = "Post failed to create"
     }
     return (
-        <div className="border2">
+        <div className="lavender rounded p-1">
             <form onSubmit={(e) => handleUpload(e)}>
-                Create Post<br />
-                <div className="error">{errorMessage}</div><br /><br />
-                <label for="file">Upload Image or Video:</label>
+                <strong>Create Post</strong>
+                <div className="error">{errorMessage}</div><br />
+                <label for="file">Upload Video:</label>
                 <input type="file" id="file" name="file"></input><br />
                 <label for="comment">Add comment:</label>
                 <input name="comment" id="comment" onChange={handleChange} value={props.comment}></input><br />
                 <input type="hidden" name="user_id" value={props.user.id}/>
                 {/* <input type="hidden" name="username" value={props.username}/> */}
-                <button>Submit</button>
+                <button class="btn btn-primary btn-sm">Submit</button>
             </form>
         </div>
     );

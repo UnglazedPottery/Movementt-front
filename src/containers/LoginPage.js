@@ -46,7 +46,7 @@ function LoginPage() {
         errorMessage = "Invalid Login"
     }
     return (
-        <form onSubmit={(e) => handleLogin(e)}>
+        <form className="whitefont font-weight-bold" onSubmit={(e) => handleLogin(e)}>
             <div className="error">{errorMessage}</div><br /><br />
             username:<input name="username" /><br /><br />
             password:<input type="password" name="password" />
