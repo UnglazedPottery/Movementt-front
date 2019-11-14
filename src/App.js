@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import FeedPage from './containers/FeedPage'
 import ProfilePage from "./containers/ProfilePage";
+import OtherProfilePage from "./containers/OtherProfilePage";
 import EditProfilePage from "./containers/EditProfilePage";
 import LoginPage from "./containers/LoginPage";
 import SignupPage from "./containers/SignupPage";
@@ -56,12 +57,15 @@ function App() {
   if (props.page === 'profile') {
     CurrentPage = <ProfilePage />
   }
+  if (props.page === 'other-profile') {
+    CurrentPage = <OtherProfilePage />
+  }
   if (props.page === 'edit-profile') {
     CurrentPage = <EditProfilePage />
   }
   return (
     <div className="container">
-      <div className="text-center "><h1>Movementt</h1></div>
+      <div className="text-center " onClick={() => dispatch({ type: 'SWITCH_PAGE', page: "feed-page" })}><h1>Movementt</h1></div>
       <div className="right font-weight-bold">
         {props.user ?
           <div>

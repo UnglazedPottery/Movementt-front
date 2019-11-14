@@ -5,7 +5,9 @@ export default function managePost(
         user: null,
         error: false,
         page: 'feed-page',
-        comment: ''
+        comment: '',
+        postIndex: null,
+        otherUser: null
     }
     , action) {
     switch (action.type) {
@@ -21,9 +23,18 @@ export default function managePost(
 
             return { ...state, user: action.user };
 
+        case 'SET_OTHER_USER':
+
+            return { ...state, otherUser: action.otherUser };
+
         case 'SWITCH_PAGE':
 
             return { ...state, page: action.page };
+
+        case 'SWITCH_PAGE2':
+
+            return { ...state, page: action.page, postIndex: (action.postId - 1) };
+
 
         case 'ERROR':
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import UserHeader from '../components/UserHeader'
 import ProfileMenuBar from '../components/ProfileMenuBar'
 import UserPostContainer from '../containers/UserPostContainer'
 import { useDispatch, useSelector } from 'react-redux'
